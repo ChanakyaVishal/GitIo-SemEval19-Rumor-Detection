@@ -1,9 +1,13 @@
 # IRE PROJECT REPORT
 ## SemEval19-Rumor-Detection
 [GitHub Repo](https://github.com/mohit3011/SemEval19-Rumor-Detection)
+
 Mohit Chandra (201502199)
+
 Nikita Garg (20172004)
+
 Chanakya Vishal KP (20161116)
+
 Aayush Tiwari(201531031)
 
 
