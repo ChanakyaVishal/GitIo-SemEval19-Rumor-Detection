@@ -1,7 +1,6 @@
 # IRE PROJECT REPORT
-## SemEval19-Rumor-Detection
-[GitHub Repo](https://github.com/mohit3011/SemEval19-Rumor-Detection)
-[Video](https://youtu.be/d7n3tHatmEg)
+[GitHub Repo](https://github.com/mohit3011/SemEval19-Rumor-Detection)<br/>
+[Link to Video](https://youtu.be/d7n3tHatmEg)
 
 Mohit Chandra (201502199)
 
@@ -11,6 +10,7 @@ Chanakya Vishal KP (20161116)
 
 Aayush Tiwari (201531031)
 
+------------------------
 
 # Overview
 The main task of this project is to deal with the objective of determining how the other
@@ -29,9 +29,9 @@ Is the text supportive?<br/>
 Is the text denial?<br/>
 + **Cosine Similarity with root rumourous tweets**
 
-## Procedure for Text Analysis and Sentiment Analysis 
+# Procedure for Text Analysis and Sentiment Analysis 
 
-### For Interrogative sentences
+## For Interrogative sentences
 + For detecting whether the statement is interrogative, denial or support (for the tweet replies), we used a classifier 
 + For Interrogative sentences (Query), we used the following procedure:
 + We looked for the following words in the tweet :
@@ -42,17 +42,17 @@ We trained a 15 class neural net classifier using a Word2Vec model in which the 
 Accept: 1, Bye: 2, Clarify: 3, Continuer: 4, Emotion: 5, Emphasis: 6, Greet: 7, Other: 8, Reject: 9, Statement: 10, System: 11, nAnswer: 12, whQuestion: 13, yAnswer: 14, ynQuestion: 15
 + If the result of classification is **ynQuestion, whQuestion or Clarify**, then it is definitely a question.
  
-### For Denial sentence
+## For Denial sentence
 If the tweet is not a question, then we count the number of positive and negative words in the tweet. We found that if the number of denial terms is greater than that of the positive words then there it implied that the tweet was more likely to be a tweet denying the source tweet. The negative terms in our corpus include terms like: **“abuse”,”false”,”belittle”,”issue”,”laughable”**.
 
-### For Supportive sentence
+## For Supportive sentence
 Similar to the process of obtaining denial tweets we found out that the reply tweet was overwhelmingly supportive if the number of positive terms was greater than that of the negative terms. The positive terms in our corpus include terms like: **“right”,”undisputable”,”true”,”wow”,”wonderous”**
 
-### For Commentative tweets
+## For Commentative tweets
 If the number of positive and negative tweets were equivalent then that meant that the author of the reply tweet was neutral in the opinion. Hence its has to be comment.
 
 
-## Word2Vec based Neural Network Classifier
+# Word2Vec based Neural Network Classifier
 We trained a 15 class neural net classifier using a Word2Vec model in which the various classes are:
 + Accept: 1
 + Bye: 2
@@ -71,7 +71,7 @@ We trained a 15 class neural net classifier using a Word2Vec model in which the 
 + ynQuestion: 15
 
 
-## Results
+# Results
 Our previous tests with the use of Naive Bayes classifier gave an accuracy of between 65-70% (Combined for all 3 types of sentences). 
 The accuracy of our current model is **70.37%**.
 
@@ -82,7 +82,7 @@ Most of the errors came for the comment class tweets as we didn’t get any spec
 
 
 
-## Challenges Faced
+# Challenges Faced
 Below are some of the challenges we faced:
 
 + The major challenge was to identify the features which had to be used, we tried on with the different set of features and through cross-validation, we finalized the current list of features. We also had to avoid overfitting to the model to the dataset being used.
