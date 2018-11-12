@@ -1,6 +1,7 @@
 # IRE PROJECT REPORT
 ## SemEval19-Rumor-Detection
 [GitHub Repo](https://github.com/mohit3011/SemEval19-Rumor-Detection)
+[Video](https://youtu.be/d7n3tHatmEg)
 
 Mohit Chandra (201502199)
 
@@ -8,7 +9,7 @@ Nikita Garg (20172004)
 
 Chanakya Vishal KP (20161116)
 
-Aayush Tiwari(201531031)
+Aayush Tiwari (201531031)
 
 
 # Overview
@@ -16,7 +17,7 @@ The main task of this project is to deal with the objective of determining how t
 sources/agents react to a rumourous story/ text. The goal here is to label the type of
 interaction between a given statement and the reply posts. Given a tree-structured
 thread of tweets, this project intends to classify each of these tweets into one of the four
-categories: Support, Deny, Query, Comment.
+categories: **Support, Deny, Query, Comment**.
 
 # Data Extraction and Pre-Processing
 In this project, we considered the data from Twitter which is in JSON format. The dataset includes the post tweet (with ID and other metadata) its nested replies (with IDs and other metadata).
@@ -34,14 +35,12 @@ The Twitter data set was in the form of a directory structure in which the tweet
 We did basic preprocessing like removal of 
 Procedure for Text Analysis and Sentiment Analysis 
 
-For detecting whether the statement is interrogative, denial or support (for the tweet replies), we used a classifier 
-
 ### For Interrogative sentences
 + For detecting whether the statement is interrogative, denial or support (for the tweet replies), we used a classifier 
 + For Interrogative sentences (Query), we used the following procedure:
 + We looked for the following words in the tweet :
-'What', 'where', 'when', 'how', 'why', '?': If any of these words are present in the tweet then definitely it is query. 
-+ 'did', 'do', 'does', 'have', 'has', 'am', 'is', 'are', 'can', 'could', 'may', 'would', 'will', 'should', 'didn't', 'doesn't', 'haven't', 'isn't', 'aren't', 'can't', 'couldn't', 'wouldn't', 'won't', 'shouldn't' : The presence of these words at the start of the tweet implies that the tweet is a query as these are helping verbs and whenever helping verbs occur at the start of the sentence then it is an interrogative sentence.
+**'What', 'where', 'when', 'how', 'why', '?'**: If any of these words are present in the tweet then definitely it is query. 
++ **'did', 'do', 'does', 'have', 'has', 'am', 'is', 'are', 'can', 'could', 'may', 'would', 'will', 'should', 'didn't', 'doesn't', 'haven't', 'isn't', 'aren't', 'can't', 'couldn't', 'wouldn't', 'won't', 'shouldn't'** : The presence of these words at the start of the tweet implies that the tweet is a query as these are helping verbs and whenever helping verbs occur at the start of the sentence then it is an interrogative sentence.
 + In the case when none of the above two conditions are matched then we parse the sentence into **a word2vec model which is trained on NLTK’s nps_chat corpus and get a vector which is further passed to a 15-class neural network based classifier.**
 We trained a 15 class neural net classifier using a Word2Vec model in which the various classes are:
 Accept: 1, Bye: 2, Clarify: 3, Continuer: 4, Emotion: 5, Emphasis: 6, Greet: 7, Other: 8, Reject: 9, Statement: 10, System: 11, nAnswer: 12, whQuestion: 13, yAnswer: 14, ynQuestion: 15
@@ -59,21 +58,21 @@ If the number of positive and negative tweets were equivalent then that meant th
 
 ## Word2Vec based Neural Network Classifier
 We trained a 15 class neural net classifier using a Word2Vec model in which the various classes are:
-Accept: 1
-Bye: 2
-Clarify: 3
-Continuer: 4
-Emotion: 5
-Emphasis: 6
-Other: 8
-Greet: 7
-Reject: 9
-Statement: 10
-System: 11
-nAnswer: 12
-whQuestion: 13
-yAnswer: 14
-ynQuestion: 15
++ Accept: 1
++ Bye: 2
++ Clarify: 3
++ Continuer: 4
++ Emotion: 5
++ Emphasis: 6
++ Other: 8
++ Greet: 7
++ Reject: 9
++ Statement: 10
++ System: 11
++ nAnswer: 12
++ whQuestion: 13
++ yAnswer: 14
++ ynQuestion: 15
 
 
 ## Results
